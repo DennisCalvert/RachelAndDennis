@@ -35,13 +35,17 @@
         margin: 0 0 30px;
       }
       .columns {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 20px;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-direction: row;
         margin-bottom: 25px;
+      }
+      @media (min-width: 600px) {
+        .columns {
+          display: flex;
+          flex-wrap: nowrap;
+          gap: 20px;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-direction: row;
+        }
       }
       .column {
         flex: 1 1 300px;
