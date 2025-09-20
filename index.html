@@ -3,30 +3,184 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rachel and Dennis</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- <script src="script.js" defer></script> -->
+    <meta name="description" content="Rachel and Dennis are getting married!" />
+    <meta name="keywords" content="wedding, marriage, Rachel, Dennis" />
+    <meta name="author" content="Rachel and Dennis" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #111;
+        color: #aaa;
+      }
+      header,
+      main {
+        padding: 10px 20px 0 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .banner-img {
+        max-width: 100%;
+      }
+
+      h1 {
+        font-size: 4em;
+        margin: 15px;
+        text-align: center;
+        color: #42696a;
+      }
+      h2 {
+        text-align: center;
+        margin: 0 0 30px;
+      }
+      .columns {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row;
+        margin-bottom: 25px;
+      }
+      .column {
+        flex: 1 1 300px;
+        background-color: #222;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+    </style>
   </head>
   <body>
     <header>
       <h1>Rachel & Dennis</h1>
     </header>
     <main>
-      <p>We're getting married!</p>
-      <p>Join us in celebrating our love and commitment to each other.</p>
+      <h2>We're getting married!</h2>
+
+      <img
+        src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66ac0d64aa8b583850f16438/images/l/68ce29c12c45f175da0b7721.jpeg"
+        alt="Rachel and Dennis"
+        class="banner-img"
+      />
+      <p
+        style="
+          color: #666;
+          font-style: italic;
+          text-align: right;
+          margin-top: 2px;
+          font-size: 0.7em;
+        "
+      >
+        Photo by Dennis & Rachel
+      </p>
+      <div class="columns">
+        <div>
+          <h3>Our Story</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed
+            dolor non metus semper facilisis non sed sem. Vivamus id bibendum
+            justo. Nam aliquam pulvinar mi a rhoncus. Sed aliquam nulla ut
+            commodo rhoncus. Nam eget facilisis augue, in tempus felis. In
+            iaculis est ut neque tristique, non mattis tellus sodales. Proin
+            sodales vitae erat non laoreet. Nunc sagittis ac tellus in bibendum.
+          </p>
+          <p>
+            Vivamus id bibendum justo. Nam aliquam pulvinar mi a rhoncus. Sed
+            aliquam nulla ut commodo rhoncus. Nam eget facilisis augue, in
+            tempus felis. In iaculis est ut neque tristique, non mattis tellus
+            sodales.
+          </p>
+
+          <p>
+            This is an additional paragraph to provide more context about our
+            journey together.
+          </p>
+        </div>
+        <div>
+          <h3>The Future</h3>
+          <p>
+            Curabitur euismod, nunc a facilisis convallis, erat libero fringilla
+            erat, in convallis erat risus nec nisi. Nullam a scelerisque augue.
+            Nulla facilisi. Donec at felis id libero fringilla convallis.
+            Maecenas non leo euismod, finibus est in, faucibus ligula. Quisque
+            euismod, nunc a facilisis convallis, erat libero fringilla erat, in
+            convallis erat risus nec nisi. Nullam a scelerisque augue. Nulla
+            facilisi. Donec at felis id libero fringilla convallis.
+          </p>
+          <p>
+            This is an additional paragraph to provide more context about our
+            future together and the plans we have in store.
+          </p>
+        </div>
+      </div>
       <img
         src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/666738c0876086543299c234/images/l/68897c44d60bebeb7a7f7bac.jpeg"
         alt="Rachel and Dennis"
         class="banner-img"
       />
+      <div style="display: flex">
+        <img
+          src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/68c5987ace84312b0672f8d2/images/l/68c5991cce84312b0672f8ec.jpeg"
+          alt="Rachel and Dennis"
+          class="banner-img"
+          style="max-width: 50%"
+        />
+        <img
+          src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/67587fcc844b04f660b0e866.jpeg"
+          alt="Rachel and Dennis"
+          class="banner-img"
+          style="max-width: 50%"
+        />
+      </div>
     </main>
     <footer>
       <!-- <p>&copy; 2023 My Web Page</p> -->
     </footer>
-    <!-- <script>
+    <script>
       console.log("Page loaded successfully!");
+      const initialLoadTime = new Date().toISOString();
       document.addEventListener("DOMContentLoaded", function () {
         console.log("DOM fully loaded and parsed");
+
+        const userId =
+          localStorage.getItem("userId") ||
+          (() => {
+            const newUserId = "user-" + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem("userId", newUserId);
+            return newUserId;
+          })();
+        // Function to send analytics data
+        function sendAnalyticsData() {
+          const analyticsData = {
+            initialLoadTime: initialLoadTime,
+            currentTime: new Date().toISOString(),
+            sessionStart: initialLoadTime,
+            userId: userId, // Use retrieved userId
+            pathName: window.location.pathname, // Get current path
+            prevPathName: window.document.referrer, // Get previous path
+            pathDateTime: new Date().toISOString(), // Current date and time
+            timeInApp:
+              new Date().toISOString() - new Date(initialLoadTime).getTime(), // Initialize time in app
+          };
+
+          const analyticsUrl = "https://base-api-ts.herokuapp.com/sauron";
+
+          fetch(analyticsUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(analyticsData),
+          }).catch((error) => {
+            console.error("Error sending analytics data:", error);
+          });
+        }
+
+        // Send analytics data every 5 minutes (300,000 ms)
+        setInterval(sendAnalyticsData, 3000);
       });
-    </script> -->
+    </script>
   </body>
 </html>
