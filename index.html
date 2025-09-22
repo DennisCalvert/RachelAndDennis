@@ -154,11 +154,8 @@
       <!-- <p>&copy; 2023 My Web Page</p> -->
     </footer>
     <script>
-      console.log("Page loaded successfully!");
       const initialLoadTime = new Date().toISOString();
       document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM fully loaded and parsed");
-
         const userId =
           localStorage.getItem("userId") ||
           (() => {
