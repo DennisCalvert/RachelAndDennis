@@ -1,0 +1,18 @@
+---
+description: After each finished task, commit and push directly to main
+alwaysApply: true
+---
+
+# Ship on main
+
+Cursor, Codex, and ChatGPT share the project instructions in `AGENTS.md`. Follow that file.
+
+After a task is done, commit the work and push it directly to `main`.
+
+- Stay on `main`. Do not open a feature branch or a pull request.
+- Stage only the files for the task.
+- Write a short commit message that says what changed.
+- Push with `git push origin main`.
+- Do not force-push, and do not commit secrets.
+
+Leave the work uncommitted only when the task is incomplete or the user asked to hold the change.
